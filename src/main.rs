@@ -22,10 +22,10 @@ fn part1(input: &str) -> u64 {
 }
 
 fn part2(input: &str) -> u64 {
-    let mut heap = BinaryHeap::new();
+    let mut heap = BinaryHeap::<u64>::new();
     let mut current_group: u64 = 0;
     for line in input.lines() {
-        if line == "" {
+        if line.is_empty() {
             heap.push(current_group);
             current_group = 0;
             continue;
